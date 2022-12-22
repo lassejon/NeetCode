@@ -191,4 +191,83 @@ public class Solution {
 
         return head;
     }
+    
+    private static ListNode<int> AddTwoNumbersBetter(ListNode<int> l1, ListNode<int> l2)
+    {
+        var carry = 0;
+
+        var prev = new ListNode<int>();
+        var result = prev;
+        while (l1 != null || l2 != null || carry != 0)
+        {
+            if(l1 != null)
+            {
+                carry = l1.val;
+                l1 = l1.next;
+            }
+
+            if(l2 != null)
+            {
+                carry = l2.val;
+                l2 = l2.next;
+            }
+
+            var res= Math.DivRem(carry, 10, out carry);
+
+            var current = new ListNode<int>(res);
+
+            prev.next = current;
+            prev = current;
+        }
+
+        return result;
+    }
+
+    public static ListNode<int> AddTwoNumbers(ListNode<int> l1, ListNode<int> l2)
+    {
+        var carry = 0;
+        var result = new ListNode<int>();
+
+        var i = 0;
+        var prev = new ListNode<int>();
+        while (l1 != null || l2 != null)
+        {
+            var res = 0;
+            if (l1 != null)
+            {
+                res += l1.val;
+                l1 = l1.next;
+
+            }
+
+            if (l2 != null)
+            {
+                res += l2.val;
+                l2 = l2.next;
+            }
+
+            if (res > 9)
+            {
+                carry = 1;
+                res -= 10;
+            }
+            else
+            {
+                carry = 0;
+            }
+
+            prev.next = new ListNode<int>(res);
+            prev = prev.next;
+            
+            if (i == 0)
+            {
+                result = prev;
+                i++;
+            }
+        }
+
+        prev.next = carry != 0 ? new ListNode<int>(carry) : null;
+
+        return result;
+    }
 }
