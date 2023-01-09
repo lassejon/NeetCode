@@ -1,4 +1,6 @@
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
+using System.Net.Sockets;
 
 namespace LinkedList;
 
@@ -269,5 +271,24 @@ public class Solution {
         prev.next = carry != 0 ? new ListNode<int>(carry) : null;
 
         return result;
+    }
+    
+    public static bool HasCycle(ListNode<int>? head)
+    {
+        var current = head;
+        var hashSet = new HashSet<ListNode<int>>();
+        
+        while (current is { })
+        {
+            if (hashSet.Contains(current))
+            {
+                return true;
+            }
+            
+            hashSet.Add(current);
+            current = current.next;
+        }
+
+        return false;
     }
 }
