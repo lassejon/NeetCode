@@ -11,6 +11,18 @@ namespace LinkedList;
      }
  }
 
+public class Node<T> {
+    public T val;
+    public Node<T> next;
+    public Node<T> random;
+    
+    public Node(T _val) {
+        val = _val;
+        next = null;
+        random = null;
+    }
+}
+
 public static class ListExtensions
 {
     public static ListNode<T>? ToListNode<T>(this IEnumerable<T> list)
@@ -31,6 +43,29 @@ public static class ListExtensions
         }
 
         return head;
+    }
+    
+    private static int FindCycleIndex(this int[] nums)
+    {
+        var fastPointer = 0;
+        var slowPointer = 0;
+
+        while (fastPointer != slowPointer)
+        {
+            fastPointer = nums[fastPointer];
+            fastPointer = nums[fastPointer];
+            slowPointer = nums[slowPointer];
+        }
+
+        var startPointer = 0;
+
+        while (slowPointer != startPointer)
+        {
+            startPointer = nums[startPointer];
+            slowPointer = nums[slowPointer];
+        }
+
+        return nums[slowPointer];
     }
 }
 
@@ -173,16 +208,22 @@ public class Solution {
             prev = current;
             length++;
         }
+
+        if (length == n)
+        {
+            return head.next;
+        }
         
         prev = head;
-        var nodeIndexToRemove = length - n;
-        var i = 1;
+        var nodeIndexToRemove = length - n - 1;
+        var i = 0;
         while (prev != null)
         {
             var current = prev.next;
             if (i == nodeIndexToRemove)
             {
                 prev.next = current.next;
+                break;
             }
 
             prev = current;
@@ -190,6 +231,62 @@ public class Solution {
         }
 
         return head;
+    }
+    
+    public static Node<int> CopyRandomList(Node<int> head)
+    {
+        var oldToCopy = new Dictionary<Node<int>, Node<int>>();
+
+        var cur = head;
+        while (cur != null)
+        {
+            oldToCopy[cur] = new Node<int>(cur.val);
+            cur = cur.next;
+        }
+
+        cur = head;
+
+        var i = 0;
+        Node<int> result = null;
+        while (cur != null)
+        {
+            var copy = oldToCopy[cur];
+            copy.next = oldToCopy[cur.next];
+            copy.random = oldToCopy[cur.random];
+            
+            if (i == 0)
+            {
+                result = copy;
+            }
+
+            cur = cur.next;
+            i++;
+        }
+
+        return result;
+    }
+    
+    public static int FindDuplicate(int[] nums) 
+    {
+        var fastPointer = 0;
+        var slowPointer = 0;
+
+        while (fastPointer != slowPointer)
+        {
+            fastPointer = nums[fastPointer];
+            fastPointer = nums[fastPointer];
+            slowPointer = nums[slowPointer];
+        }
+
+        var startPointer = 0;
+
+        while (slowPointer != startPointer)
+        {
+            startPointer = nums[startPointer];
+            slowPointer = nums[slowPointer];
+        }
+
+        return nums[slowPointer];
     }
     
     private static ListNode<int> AddTwoNumbersBetter(ListNode<int> l1, ListNode<int> l2)
