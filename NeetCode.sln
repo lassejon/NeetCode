@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearch", "BinarySearc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "LinkedList\LinkedList.csproj", "{48D6DB02-C564-4D2D-8C3C-D426BAFC5ED1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees", "Trees\Trees.csproj", "{FEFD99FD-FA86-436E-9E56-D678EAECCF21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{48D6DB02-C564-4D2D-8C3C-D426BAFC5ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48D6DB02-C564-4D2D-8C3C-D426BAFC5ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48D6DB02-C564-4D2D-8C3C-D426BAFC5ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEFD99FD-FA86-436E-9E56-D678EAECCF21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEFD99FD-FA86-436E-9E56-D678EAECCF21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEFD99FD-FA86-436E-9E56-D678EAECCF21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEFD99FD-FA86-436E-9E56-D678EAECCF21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
