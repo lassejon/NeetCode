@@ -21,9 +21,13 @@ public class LRUCache
             return -1;
         }
 
-        if (node == _lru)
+        if (node == _lru && _count > 1)
         {
             _lru = node.Next;
+            if (_lru != null)
+            {
+                _lru.Before = null;
+            }
         }
         
         var before = node.Before;
@@ -42,7 +46,6 @@ public class LRUCache
         _mru = node;
 
         return node.Value;
-
     }
     
     public void Put(int key, int value)
@@ -52,7 +55,11 @@ public class LRUCache
         if (_count == _capacity)
         {
             Delete();
-
+        }
+        
+        if (nodes.TryGetValue(key, out var existingNode))
+        {
+            existingNode.Value = value;
             return;
         }
         
@@ -70,17 +77,23 @@ public class LRUCache
 
         nodes[key] = node;
 
-        _count++;
+        _count = _count == _capacity ? _count : _count + 1;
     }
 
     private void Delete()
     {
         var nodeToRemove = _lru;
+
+        if (nodeToRemove == null)
+        {
+            return;
+        }
+        
         _lru = nodeToRemove.Next;
 
         nodeToRemove.Before = null;
-        nodeToRemove.Next = null;
-        
+        nodeToRemove.Next = null;    
+            
         nodes.Remove(nodeToRemove.Key);
     }
 }

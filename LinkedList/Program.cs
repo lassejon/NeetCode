@@ -24,6 +24,6 @@
 using LinkedList;
 
 var input = new Input(
-    new string[] {"LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"},
-    new [] { new[]{2}, new[]{1, 1}, new[]{2, 2}, new[]{1}, new[]{3, 3}, new[]{2}, new[]{4, 4}, new[]{1}, new[]{3}, new[]{4} });
+    new string[] {"LRUCache","get","put","get","put","put","get","get"},
+    new [] { new[]{2}, new[]{2}, new[]{2, 6}, new[]{1}, new[]{1, 5}, new[]{1, 2}, new[]{1}, new[]{2} });
 var breakpoint = "";
