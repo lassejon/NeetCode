@@ -46,6 +46,7 @@ public class LRUCache
         _mru = node;
 
         return node.Value;
+
     }
     
     public void Put(int key, int value)
