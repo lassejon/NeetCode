@@ -1,20 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArraysAndHashing", "ArraysAndHashing\ArraysAndHashing.csproj", "{727D9038-FAA3-4703-A19F-2853398D5B76}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArraysAndHashing", "ArraysAndHashing\ArraysAndHashing.csproj", "{727D9038-FAA3-4703-A19F-2853398D5B76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoPointers", "TwoPointers\TwoPointers.csproj", "{B93CF3D9-9B18-48C2-9DFE-7AA4DA17E603}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoPointers", "TwoPointers\TwoPointers.csproj", "{B93CF3D9-9B18-48C2-9DFE-7AA4DA17E603}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlidingWindow", "SlidingWindow\SlidingWindow.csproj", "{45256354-A340-4449-B75B-A03FB53C950A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlidingWindow", "SlidingWindow\SlidingWindow.csproj", "{45256354-A340-4449-B75B-A03FB53C950A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "Stack\Stack.csproj", "{F7296DDB-5640-4780-A91D-3A8A22C75E81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack", "Stack\Stack.csproj", "{F7296DDB-5640-4780-A91D-3A8A22C75E81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearch", "BinarySearch\BinarySearch.csproj", "{6EF58A2B-7A7B-4EFC-8011-60F3FC548893}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySearch", "BinarySearch\BinarySearch.csproj", "{6EF58A2B-7A7B-4EFC-8011-60F3FC548893}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "LinkedList\LinkedList.csproj", "{48D6DB02-C564-4D2D-8C3C-D426BAFC5ED1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList", "LinkedList\LinkedList.csproj", "{48D6DB02-C564-4D2D-8C3C-D426BAFC5ED1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees", "Trees\Trees.csproj", "{FEFD99FD-FA86-436E-9E56-D678EAECCF21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriesSoHard", "TriesSoHard\TriesSoHard.csproj", "{6BA5F550-E6B2-4643-A902-3140A3081832}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriesSoHard", "TriesSoHard\TriesSoHard.csproj", "{6BA5F550-E6B2-4643-A902-3140A3081832}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heaps", "Heaps\Heaps.csproj", "{102FA621-FEF7-4D54-9459-F67DD3ECF5DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backtracking", "Backtracking\Backtracking.csproj", "{9DF6A840-582D-4BCC-96DE-511E025DD490}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,5 +61,16 @@ Global
 		{6BA5F550-E6B2-4643-A902-3140A3081832}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BA5F550-E6B2-4643-A902-3140A3081832}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BA5F550-E6B2-4643-A902-3140A3081832}.Release|Any CPU.Build.0 = Release|Any CPU
+		{102FA621-FEF7-4D54-9459-F67DD3ECF5DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{102FA621-FEF7-4D54-9459-F67DD3ECF5DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{102FA621-FEF7-4D54-9459-F67DD3ECF5DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{102FA621-FEF7-4D54-9459-F67DD3ECF5DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DF6A840-582D-4BCC-96DE-511E025DD490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DF6A840-582D-4BCC-96DE-511E025DD490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DF6A840-582D-4BCC-96DE-511E025DD490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DF6A840-582D-4BCC-96DE-511E025DD490}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
