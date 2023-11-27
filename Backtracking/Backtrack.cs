@@ -221,6 +221,40 @@ namespace Backtracking
                 permutation.Pop();
             }
         }
+        
+        public static IList<IList<int>> SubsetsWithDup(int[] nums)
+        {
+            var cache = new HashSet<List<int>>(new ListEqualityComparer());
+
+            var subset = new List<int>();
+            var result = new List<IList<int>>();
+
+            BacktrackWithDup(0, nums, subset, result, cache);
+
+            return result;
+        }
+
+        private static void BacktrackWithDup(int i, int[] nums, List<int> subset, List<IList<int>> result, HashSet<List<int>> cache)
+        {
+            if (i >= nums.Length)
+            {
+                var subsetToAdd = new List<int>(subset);
+
+                if (!cache.Contains(subsetToAdd))
+                {
+                    result.Add(subsetToAdd);
+                    cache.Add(subsetToAdd);
+                }
+            
+                return;
+            }
+        
+            subset.Add(nums[i]);
+            BacktrackWithDup(i + 1, nums, subset, result, cache);
+
+            subset.Remove(nums[i]);
+            BacktrackWithDup(i + 1, nums, subset, result, cache);
+        }
     }
 
     public class ListEqualityComparer : IEqualityComparer<List<int>>

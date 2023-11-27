@@ -15,10 +15,23 @@ Console.WriteLine("Hello, World!");
 //     Console.WriteLine($" solution: {Backtracking.Backtracking.NumDistinctRecursive(c[0], c[1])}");
 // });
 
-var nums = new [] { -1,2,-1,2,1,-1,2,1 };
-var nums2 = new [] { 1, 1, 2 }; 
+// var nums = new [] { -1,2,-1,2,1,-1,2,1 };
+// var nums2 = new [] { 1, 1, 2 }; 
+//
+// var result = Backtracking.Backtracking.PermuteUnique(nums2);
+//
+// foreach (var list in result)
+// {
+//     Console.Write("[");
+//     foreach (var var in list)
+//     {
+//         Console.Write($"{var}, ");
+//     }
+//     Console.WriteLine("]");
+// }
 
-var result = Backtracking.Backtracking.PermuteUnique(nums2);
+var testCase = new [] { 1, 2, 2 };
+var result = Backtracking.Backtracking.SubsetsWithDup(testCase);
 
 foreach (var list in result)
 {
